@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:codable/codable.dart';
+import 'package:codable_forked/codable.dart';
 import 'package:test/test.dart';
 
 void main() {

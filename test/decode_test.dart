@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:codable/codable.dart';
+import 'package:codable_forked/codable.dart';
 import 'package:test/test.dart';
-import 'package:codable/cast.dart' as cast;
+import 'package:codable_forked/cast.dart' as cast;
 
 void main() {
   group("Primitive decode", () {

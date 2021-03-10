@@ -1,9 +1,9 @@
 import 'dart:collection';
 
-import 'package:codable/src/codable.dart';
-import 'package:codable/src/coding.dart';
-import 'package:codable/src/keyed_archive.dart';
-import 'package:codable/src/resolver.dart';
+import 'package:codable_forked/src/codable.dart';
+import 'package:codable_forked/src/coding.dart';
+import 'package:codable_forked/src/keyed_archive.dart';
+import 'package:codable_forked/src/resolver.dart';
 
 /// A list of values in a [KeyedArchive].
 ///

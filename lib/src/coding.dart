@@ -1,6 +1,6 @@
-import 'package:codable/src/keyed_archive.dart';
+import 'package:codable_forked/src/keyed_archive.dart';
 import 'package:meta/meta.dart';
-import 'package:codable/cast.dart' as cast;
+import 'package:codable_forked/cast.dart' as cast;
 
 /// A base class for encodable and decodable objects.
 ///

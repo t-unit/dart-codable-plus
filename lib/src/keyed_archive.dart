@@ -1,9 +1,9 @@
 import 'dart:collection';
-import 'package:codable/src/codable.dart';
-import 'package:codable/src/coding.dart';
-import 'package:codable/cast.dart' as cast;
-import 'package:codable/src/list.dart';
-import 'package:codable/src/resolver.dart';
+import 'package:codable_forked/src/codable.dart';
+import 'package:codable_forked/src/coding.dart';
+import 'package:codable_forked/cast.dart' as cast;
+import 'package:codable_forked/src/list.dart';
+import 'package:codable_forked/src/resolver.dart';
 
 /// A container for a dynamic data object that can be decoded into [Coding] objects.
 ///
@@ -98,7 +98,7 @@ class KeyedArchive extends Object
   /// for a given key. Use this method (or [Coding.castMap]) for decoding `List` and `Map`
   /// types, where the values are not `Coding` objects.
   ///
-  /// You must `import 'package:codable/cast.dart' as cast;`.
+  /// You must `import 'package:codable_forked/cast.dart' as cast;`.
   ///
   /// Usage:
   ///
