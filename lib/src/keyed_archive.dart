@@ -234,9 +234,9 @@ class KeyedArchive extends Object
       return null;
     }
 
-    if (T is Uri) {
+    if (T == Uri) {
       return Uri.parse(v) as T;
-    } else if (T is DateTime) {
+    } else if (T == DateTime) {
       return DateTime.parse(v) as T;
     }
 

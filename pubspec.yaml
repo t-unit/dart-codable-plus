@@ -1,6 +1,6 @@
 name: codable_forked
 description: A serialization library for converting dynamic, structured data (JSON, YAML) into Dart types.
-version: 1.0.0
+version: 1.0.0+1
 homepage: https://github.com/stablekernel/dart-codable
 author: stable|kernel <jobs@stablekernel.com>
 

@@ -30,15 +30,15 @@ void main() {
 
     test("Can decode URI", () {
       final archive = getJSONArchive({"key": "https://host.com"});
-      Uri d = Uri.parse(archive!.decode("key"));
-      expect(d.host, "host.com");
+      Uri? d = archive!.decode("key");
+      expect(d!.host, "host.com");
     });
 
     test("Can decode DateTime", () {
       final date = new DateTime.now();
       final archive = getJSONArchive({"key": date.toIso8601String()});
-      DateTime d = DateTime.parse(archive!.decode("key"));
-      expect(d.isAtSameMomentAs(date), true);
+      DateTime? d = archive!.decode("key");
+      expect(d!.isAtSameMomentAs(date), true);
     });
 
     test("If value is null, return null from decode", () {
