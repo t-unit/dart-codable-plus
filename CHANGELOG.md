@@ -1,3 +1,7 @@
+## 1.0.0+2
+
+- Removed some null unwraps.
+
 ## 1.0.0+1
 
 - Fix decode method for Uri/DateTime

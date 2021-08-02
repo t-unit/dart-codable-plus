@@ -121,9 +121,10 @@ class KeyedArchive extends Object
     final caster = new cast.Keyed(schema);
     _map = caster.cast(_map);
 
+    final _objectReference = this._objectReference;
     if (_objectReference != null) {
       // todo: can optimize this by only running it once
-      _objectReference!._map = caster.cast(_objectReference!._map);
+      _objectReference._map = caster.cast(_objectReference._map);
     }
   }
 
@@ -185,11 +186,12 @@ class KeyedArchive extends Object
   /// This method is automatically invoked by both [KeyedArchive.unarchive] and [KeyedArchive.archive].
   @override
   void resolveOrThrow(ReferenceResolver coder) {
+    final referenceURI = this.referenceURI;
     if (referenceURI != null) {
-      _objectReference = coder.resolve(referenceURI!);
+      _objectReference = coder.resolve(referenceURI);
       if (_objectReference == null) {
         throw new ArgumentError(
-            "Invalid document. Reference '#${referenceURI!.path}' does not exist in document.");
+            "Invalid document. Reference '#${referenceURI.path}' does not exist in document.");
       }
     }
 
@@ -210,10 +212,10 @@ class KeyedArchive extends Object
     }
 
     if (raw._inflated == null) {
-      raw._inflated = inflate();
-      if (raw._inflated != null) {
-        raw._inflated!.decode(raw);
-      }
+      final _inflated = raw._inflated = inflate();
+      // if (_inflated != null) {
+      _inflated.decode(raw);
+      // }
     }
 
     return raw._inflated as T;
@@ -317,8 +319,9 @@ class KeyedArchive extends Object
     var json = new KeyedArchive._empty()
       .._map = {}
       ..referenceURI = object.referenceURI;
-    if (json.referenceURI != null) {
-      json._map[r"$ref"] = Uri(fragment: json.referenceURI!.path).toString();
+    final referenceURI = json.referenceURI;
+    if (referenceURI != null) {
+      json._map[r"$ref"] = Uri(fragment: referenceURI.path).toString();
     } else {
       object.encode(json);
     }
