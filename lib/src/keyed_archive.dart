@@ -134,7 +134,7 @@ class KeyedArchive extends Object
 
   dynamic operator [](Object? key) => _getValue(key as String?);
 
-  Iterable<String> get keys => _map.keys;
+  Iterable<String> get keys => {..._map.keys, ...?_objectReference?.keys};
 
   void clear() => _map.clear();
 
