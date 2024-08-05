@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:codable_forked/codable.dart';
+import 'package:codable_plus/codable.dart';
 import 'package:test/test.dart';
-import 'package:codable_forked/cast.dart' as cast;
+import 'package:codable_plus/cast.dart' as cast;
 
 void main() {
   group("Primitive decode", () {
@@ -386,7 +386,7 @@ void main() {
 }
 
 /// Strips type info from data
-KeyedArchive? getJSONArchive(dynamic data, {bool allowReferences: false}) {
+KeyedArchive? getJSONArchive(dynamic data, {bool allowReferences = false}) {
   return KeyedArchive.unarchive(json.decode(json.encode(data)),
       allowReferences: allowReferences);
 }

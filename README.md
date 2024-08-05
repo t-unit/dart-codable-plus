@@ -1,6 +1,4 @@
 # codable
- 
-[![Build Status](https://travis-ci.org/stablekernel/dart-codable.svg?branch=master)](https://travis-ci.org/stablekernel/dart-codable)
 
 A library for encoding and decoding dynamic data into Dart objects.
 

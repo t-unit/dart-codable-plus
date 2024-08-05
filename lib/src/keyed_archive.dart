@@ -1,9 +1,9 @@
 import 'dart:collection';
-import 'package:codable_forked/src/codable.dart';
-import 'package:codable_forked/src/coding.dart';
-import 'package:codable_forked/cast.dart' as cast;
-import 'package:codable_forked/src/list.dart';
-import 'package:codable_forked/src/resolver.dart';
+import 'package:codable_plus/src/codable.dart';
+import 'package:codable_plus/src/coding.dart';
+import 'package:codable_plus/cast.dart' as cast;
+import 'package:codable_plus/src/list.dart';
+import 'package:codable_plus/src/resolver.dart';
 
 /// A container for a dynamic data object that can be decoded into [Coding] objects.
 ///
@@ -36,7 +36,7 @@ class KeyedArchive extends Object
   /// If [allowReferences] is true, JSON Schema references will be traversed and decoded objects
   /// will contain values from the referenced object. This flag defaults to false.
   static KeyedArchive unarchive(Map<String, dynamic> data,
-      {bool allowReferences: false}) {
+      {bool allowReferences = false}) {
     final archive = new KeyedArchive(data);
     if (allowReferences) {
       archive.resolveOrThrow(new ReferenceResolver(archive));
@@ -53,7 +53,7 @@ class KeyedArchive extends Object
   /// If [allowReferences] is true, JSON Schema references in the emitted document will be validated.
   /// Defaults to false.
   static Map<String, dynamic> archive(Coding root,
-      {bool allowReferences: false}) {
+      {bool allowReferences = false}) {
     final archive = new KeyedArchive({});
     root.encode(archive);
     if (allowReferences) {
@@ -98,7 +98,7 @@ class KeyedArchive extends Object
   /// for a given key. Use this method (or [Coding.castMap]) for decoding `List` and `Map`
   /// types, where the values are not `Coding` objects.
   ///
-  /// You must `import 'package:codable_forked/cast.dart' as cast;`.
+  /// You must `import 'package:codable_plus/cast.dart' as cast;`.
   ///
   /// Usage:
   ///

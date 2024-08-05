@@ -1,4 +1,4 @@
-import 'package:codable_forked/src/keyed_archive.dart';
+import 'package:codable_plus/src/keyed_archive.dart';
 
 class ReferenceResolver {
   ReferenceResolver(this.document);
